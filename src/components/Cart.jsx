@@ -12,7 +12,6 @@ const Cart = () => {
     }
     const handleRemoveItem = () => {
         dispatch(clearCart());
-        console.log('hhh');
     };
     if (cartItems.length === 0) {
         return (
@@ -27,12 +26,12 @@ const Cart = () => {
     return (
         <div className="w-9/12 m-auto flex mt-5 z-10 relative">
             <div className="w-6/12">
-                <h1>Product Items</h1>
+                <h1 className="font-semibold">Product Items</h1>
                 <div className="">
                     {cartItems.map((item) => {
                         const { image, title, price } = item;
                         return (
-                            <div className="flex border border-gray-300 rounded-md">
+                            <div className="flex border border-gray-300 rounded-md p-5 m-3">
                                 <img
                                     src={image}
                                     alt=""
@@ -48,17 +47,21 @@ const Cart = () => {
                     })}
                 </div>
             </div>
-            <div className="w-6/12 border-l-2">
-                <button
-                    className="bg-red-400 py-1 px-4 rounded-md"
-                    onClick={handleRemoveItem}
-                >
-                    Clear Cart X
-                </button>
-                <h2 className="font-medium">
-                    Product Details ({cartItems.length} items)
-                </h2>
-                <h3>Total Product Price {totalAmount}</h3>
+            <div className="w-6/12 border-l-2 relative">
+                <div className="fixed">
+                    <button
+                        className="bg-red-400 py-1 px-4 rounded-md mb-4 ml-3"
+                        onClick={handleRemoveItem}
+                    >
+                        Clear Cart X
+                    </button>
+                    <div className="pl-3">
+                        <h2 className="font-medium">
+                            Product Details ({cartItems.length} items)
+                        </h2>
+                        <h3 className="mt-3 text-gray-500">Total Product Price <span className="ml-1">$ {totalAmount}</span></h3>
+                    </div>
+                </div>
             </div>
         </div>
     );

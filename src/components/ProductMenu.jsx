@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { PRODUCT_DATA } from "../utils/constant";
 import { FaStar } from "react-icons/fa";
 import { useDispatch } from "react-redux";
@@ -67,6 +67,11 @@ const ProductMenu = () => {
                     >
                         Add to Cart
                     </button>
+                    <Link to={"/cart"}>
+                        <button className="bg-white border border-orange-400 text-orange-400 w-[53%] py-2 rounded-md mt-5">
+                            Go to Cart
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
