@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.productGrid {
+  text-align: -webkit-center;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.gridCard {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gridCard img {
+  width: 100px;
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  margin-top: 36px;
+}
+
+.gridCard h3 {
+  color: #535766;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.gridCard h4 {
+  color: black;
+}
+.ImgParent{
+  height: 412px;
+}
+@media only screen and (max-width: 768px) {
+  .navBar {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
