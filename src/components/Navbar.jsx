@@ -15,15 +15,6 @@ const Navbar = () => {
                         <img src={logo} alt="Logo" className="w-20" />
                     </Link>
                 </div>
-                {/* <div className="m-2 p-2 gap-x-0 hidden md:flex ">
-                    <input
-                        type="text"
-                        className="border border-gray-200 rounded-md rounded-r-none"
-                    />
-                    <button className="bg-orange-400 border-gray-200 text-white rounded-md py-1 px-2 rounded-l-none">
-                        Search
-                    </button>
-                </div> */}
                 <div className="flex items-center font-semibold text-base">
                     <ul className="flex gap-x-4">
                         <Link to={"/cart"}>
