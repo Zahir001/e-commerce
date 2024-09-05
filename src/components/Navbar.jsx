@@ -29,7 +29,7 @@ const Navbar = () => {
                         <Link to={"/cart"}>
                             <li className="relative flex flex-row-reverse">
                                 <CiShoppingCart className="md:text-4xl text-5xl" />
-                                <span className="absolute bg-red-500 rounded-full w-5 h-5 text-sm text-white flex items-center justify-center right-[-6px]">{itemList ? itemList.length : ""}</span>
+                                <span className="absolute bg-red-500 rounded-full w-5 h-5 text-sm text-white flex items-center justify-center right-[-6px]">{itemList.length}</span>
                                 {/* Cart {`${itemList ? itemList.length : ""}`} */}
                             </li>
                         </Link>

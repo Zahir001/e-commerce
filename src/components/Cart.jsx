@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../store/cartSlice";
+import { clearCart, removeItem } from "../store/cartSlice";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -7,10 +7,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const cartItems = items;
     console.log(cartItems);
-    if (!cartItems.length === 0) {
-        return <h1>Loading..</h1>;
-    }
-    const handleRemoveItem = () => {
+    const handleClearItem = () => {
         dispatch(clearCart());
     };
     if (cartItems.length === 0) {
@@ -23,6 +20,7 @@ const Cart = () => {
             </div>
         );
     }
+    
     return (
         <div className="w-9/12 m-auto flex mt-5 z-10 relative">
             <div className="w-6/12">
@@ -38,8 +36,8 @@ const Cart = () => {
                                     height={50}
                                     width={50}
                                 />
-                                <div>
-                                    <h2>{title}</h2>
+                                <div className="ml-2">
+                                    <h2 >{title}</h2>
                                     <h3>${price}</h3>
                                 </div>
                             </div>
@@ -51,7 +49,7 @@ const Cart = () => {
                 <div className="fixed">
                     <button
                         className="bg-red-400 py-1 px-4 rounded-md mb-4 ml-3"
-                        onClick={handleRemoveItem}
+                        onClick={handleClearItem}
                     >
                         Clear Cart X
                     </button>
@@ -59,7 +57,10 @@ const Cart = () => {
                         <h2 className="font-medium">
                             Product Details ({cartItems.length} items)
                         </h2>
-                        <h3 className="mt-3 text-gray-500">Total Product Price <span className="ml-1">$ {totalAmount}</span></h3>
+                        <h3 className="mt-3 text-gray-600 text-lg">
+                            Total Cost
+                            <span className="ml-1">$ {totalAmount.toFixed(2)}</span>
+                        </h3>
                     </div>
                 </div>
             </div>

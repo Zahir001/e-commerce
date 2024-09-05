@@ -7,6 +7,7 @@ const cartSlice = createSlice({
   }),
   reducers: {
     addItem: (state, action) => {
+      
       state.items.push(action.payload);
       state.totalAmount += action.payload.price;
 
@@ -14,15 +15,16 @@ const cartSlice = createSlice({
       localStorage.setItem('cartTotalAmount', JSON.stringify(state.totalAmount));
 
     },
+    
     clearCart: (state) => {
       state.items.length = 0;
       state.totalAmount = 0;
       localStorage.removeItem('cartItems');
       localStorage.removeItem('cartTotalAmount');
-    }
+    },
   }
 })
 
-export const { addItem, clearCart } = cartSlice.actions;
+export const { addItem, clearCart, removeItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
