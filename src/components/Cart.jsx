@@ -22,7 +22,7 @@ const Cart = () => {
     }
     
     return (
-        <div className="w-9/12 m-auto flex mt-5 z-10 relative">
+        <div className="w-full md:w-9/12 m-auto flex mt-5 z-10 relative">
             <div className="w-6/12">
                 <h1 className="font-semibold">Product Items</h1>
                 <div className="">
